@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSBM Food Nest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loader-wrapper" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <header>
+        <div class="brand-container">
+            <img src="logo.png" alt="NSBM Logo" class="logo-img">
+            <h1>NSBM Food Nest</h1>
+        </div>
+        <nav class="header-nav">
+            <a href="#">Home</a>
+            
+            <div class="dropdown">
+                <a href="#categories" class="dropbtn">Categories ▾</a>
+                <div class="dropdown-content">
+                    <a href="#rice-curry">Rice & Curry</a>
+                    <a href="#fast-food">Fast Food</a>
+                    <a href="#beverages">Beverages</a>
+                    <a href="#desserts">Desserts</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#menu" class="dropbtn">Menu ▾</a>
+                <div class="dropdown-content">
+                    <a href="#fast-food">Breakfast Items</a>
+                    <a href="#rice-curry">Lunch Specials</a>
+                    <a href="#fast-food">Short Eats</a>
+                </div>
+            </div>
+        </nav>
+        <button class="cart-toggle" onclick="toggleCart()">
+            Cart (<span id="cart-count">0</span>)
+        </button>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Delicious Campus Meals for <span>NSBM Students</span></h1>
+                <p>Fresh rice and curry, fast food, and beverages made daily for students and staff. Support our campus kitchen.</p>
+                <a href="#menu" class="hero-btn">Order Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="fn.png" alt="NSBM Campus Food">
+            </div>
+        </section>
+
+        <section id="categories" class="categories-section">
+            <h2>Browse by Category</h2>
+            <div class="category-grid">
+                <a href="#rice-curry" class="category-card">
+                    <img src="rc.jpg" alt="Rice & Curry">
+                    <div class="category-info">
+                        <h3>Rice & Curry</h3>
+                        <p>Traditional local meals</p>
+                    </div>
+                </a>
+                <a href="#fast-food" class="category-card">
+                    <img src="fd.jpg" alt="Fast Food">
+                    <div class="category-info">
+                        <h3>Fast Food</h3>
+                        <p>Quick bites and snacks</p>
+                    </div>
+                </a>
+                <a href="#beverages" class="category-card">
+                    <img src="bv.jpeg" alt="Beverages">
+                    <div class="category-info">
+                        <h3>Beverages</h3>
+                        <p>Cold drinks and fresh juices</p>
+                    </div>
+                </a>
+                <a href="#desserts" class="category-card">
+                    <img src="INSERT_DESSERT_CATEGORY_IMAGE.jpg" alt="Desserts">
+                    <div class="category-info">
+                        <h3>Desserts</h3>
+                        <p>Sweet treats to finish your meal</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <div id="menu">
+            
+            <section id="rice-curry" class="menu-section">
+                <div class="section-header">
+                    <h2>Rice & Curry</h2>
+                    <p>Authentic Sri Lankan meals served fresh daily.</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="product-card">
+                        <img src="INSERT_RICE_1.jpg" alt="Chicken Rice & Curry" class="product-image">
+                        <div class="product-info"><h2>Chicken Rice & Curry</h2><p class="price">Rs. 450.00</p><button class="add-btn" onclick="addToCart('Chicken Rice & Curry', 450)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_2.jpg" alt="Fish Rice & Curry" class="product-image">
+                        <div class="product-info"><h2>Fish Rice & Curry</h2><p class="price">Rs. 400.00</p><button class="add-btn" onclick="addToCart('Fish Rice & Curry', 400)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_3.jpg" alt="Egg Rice & Curry" class="product-image">
+                        <div class="product-info"><h2>Egg Rice & Curry</h2><p class="price">Rs. 350.00</p><button class="add-btn" onclick="addToCart('Egg Rice & Curry', 350)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_4.jpg" alt="Vegetable Rice & Curry" class="product-image">
+                        <div class="product-info"><h2>Vegetable Rice & Curry</h2><p class="price">Rs. 300.00</p><button class="add-btn" onclick="addToCart('Vegetable Rice & Curry', 300)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_5.jpg" alt="Fried Rice - Chicken" class="product-image">
+                        <div class="product-info"><h2>Fried Rice (Chicken)</h2><p class="price">Rs. 600.00</p><button class="add-btn" onclick="addToCart('Fried Rice (Chicken)', 600)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_6.jpg" alt="Fried Rice - Mixed" class="product-image">
+                        <div class="product-info"><h2>Fried Rice (Mixed)</h2><p class="price">Rs. 650.00</p><button class="add-btn" onclick="addToCart('Fried Rice (Mixed)', 650)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_7.jpg" alt="Biryani - Chicken" class="product-image">
+                        <div class="product-info"><h2>Chicken Biryani</h2><p class="price">Rs. 750.00</p><button class="add-btn" onclick="addToCart('Chicken Biryani', 750)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_8.jpg" alt="Nasi Goreng" class="product-image">
+                        <div class="product-info"><h2>Nasi Goreng</h2><p class="price">Rs. 700.00</p><button class="add-btn" onclick="addToCart('Nasi Goreng', 700)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_9.jpg" alt="Yellow Rice with Chicken" class="product-image">
+                        <div class="product-info"><h2>Yellow Rice (Chicken)</h2><p class="price">Rs. 500.00</p><button class="add-btn" onclick="addToCart('Yellow Rice (Chicken)', 500)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_RICE_10.jpg" alt="Lumprais" class="product-image">
+                        <div class="product-info"><h2>Special Lumprais</h2><p class="price">Rs. 850.00</p><button class="add-btn" onclick="addToCart('Special Lumprais', 850)">Add to Cart</button></div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="fast-food" class="menu-section">
+                <div class="section-header">
+                    <h2>Fast Food & Short Eats</h2>
+                    <p>Quick bites, burgers, kottu, and savory snacks.</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="product-card">
+                        <img src="INSERT_FAST_1.jpg" alt="Cheese Kottu" class="product-image">
+                        <div class="product-info"><h2>Cheese Kottu</h2><p class="price">Rs. 800.00</p><button class="add-btn" onclick="addToCart('Cheese Kottu', 800)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_2.jpg" alt="Chicken Kottu" class="product-image">
+                        <div class="product-info"><h2>Chicken Kottu</h2><p class="price">Rs. 600.00</p><button class="add-btn" onclick="addToCart('Chicken Kottu', 600)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_3.jpg" alt="Chicken Burger" class="product-image">
+                        <div class="product-info"><h2>Crispy Chicken Burger</h2><p class="price">Rs. 550.00</p><button class="add-btn" onclick="addToCart('Crispy Chicken Burger', 550)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_4.jpg" alt="Submarine" class="product-image">
+                        <div class="product-info"><h2>Chicken Submarine</h2><p class="price">Rs. 650.00</p><button class="add-btn" onclick="addToCart('Chicken Submarine', 650)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_5.jpg" alt="Fish Bun" class="product-image">
+                        <div class="product-info"><h2>Fish Bun (Maalu Paan)</h2><p class="price">Rs. 150.00</p><button class="add-btn" onclick="addToCart('Fish Bun', 150)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_6.jpg" alt="Chicken Patty" class="product-image">
+                        <div class="product-info"><h2>Chicken Patty</h2><p class="price">Rs. 160.00</p><button class="add-btn" onclick="addToCart('Chicken Patty', 160)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_7.jpg" alt="Egg Roll" class="product-image">
+                        <div class="product-info"><h2>Chinese Egg Roll</h2><p class="price">Rs. 180.00</p><button class="add-btn" onclick="addToCart('Chinese Egg Roll', 180)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_8.jpg" alt="Sausage Pastry" class="product-image">
+                        <div class="product-info"><h2>Sausage Pastry</h2><p class="price">Rs. 170.00</p><button class="add-btn" onclick="addToCart('Sausage Pastry', 170)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_9.jpg" alt="French Fries" class="product-image">
+                        <div class="product-info"><h2>Large French Fries</h2><p class="price">Rs. 400.00</p><button class="add-btn" onclick="addToCart('Large French Fries', 400)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_FAST_10.jpg" alt="Hot Dog" class="product-image">
+                        <div class="product-info"><h2>Jumbo Hot Dog</h2><p class="price">Rs. 450.00</p><button class="add-btn" onclick="addToCart('Jumbo Hot Dog', 450)">Add to Cart</button></div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="beverages" class="menu-section">
+                <div class="section-header">
+                    <h2>Beverages</h2>
+                    <p>Chilled drinks, fresh juices, and hot coffees.</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="product-card">
+                        <img src="INSERT_BEV_1.jpg" alt="Iced Milo" class="product-image">
+                        <div class="product-info"><h2>Iced Milo</h2><p class="price">Rs. 250.00</p><button class="add-btn" onclick="addToCart('Iced Milo', 250)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_2.jpg" alt="Iced Coffee" class="product-image">
+                        <div class="product-info"><h2>NSBM Special Iced Coffee</h2><p class="price">Rs. 200.00</p><button class="add-btn" onclick="addToCart('NSBM Special Iced Coffee', 200)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_3.jpg" alt="Coca Cola" class="product-image">
+                        <div class="product-info"><h2>Coca Cola (500ml)</h2><p class="price">Rs. 150.00</p><button class="add-btn" onclick="addToCart('Coca Cola (500ml)', 150)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_4.jpg" alt="Sprite" class="product-image">
+                        <div class="product-info"><h2>Sprite (500ml)</h2><p class="price">Rs. 150.00</p><button class="add-btn" onclick="addToCart('Sprite (500ml)', 150)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_5.jpg" alt="Papaya Juice" class="product-image">
+                        <div class="product-info"><h2>Fresh Papaya Juice</h2><p class="price">Rs. 300.00</p><button class="add-btn" onclick="addToCart('Fresh Papaya Juice', 300)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_6.jpg" alt="Lime Juice" class="product-image">
+                        <div class="product-info"><h2>Fresh Lime & Mint</h2><p class="price">Rs. 250.00</p><button class="add-btn" onclick="addToCart('Fresh Lime & Mint', 250)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_7.jpg" alt="Mango Juice" class="product-image">
+                        <div class="product-info"><h2>Fresh Mango Juice</h2><p class="price">Rs. 350.00</p><button class="add-btn" onclick="addToCart('Fresh Mango Juice', 350)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_8.jpg" alt="Hot Tea" class="product-image">
+                        <div class="product-info"><h2>Milk Tea</h2><p class="price">Rs. 100.00</p><button class="add-btn" onclick="addToCart('Milk Tea', 100)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_9.jpg" alt="Nescafe" class="product-image">
+                        <div class="product-info"><h2>Hot Nescafe</h2><p class="price">Rs. 150.00</p><button class="add-btn" onclick="addToCart('Hot Nescafe', 150)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_BEV_10.jpg" alt="Bottled Water" class="product-image">
+                        <div class="product-info"><h2>Mineral Water (1L)</h2><p class="price">Rs. 100.00</p><button class="add-btn" onclick="addToCart('Mineral Water (1L)', 100)">Add to Cart</button></div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="desserts" class="menu-section">
+                <div class="section-header">
+                    <h2>Desserts</h2>
+                    <p>Ice creams, puddings, and cakes.</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="product-card">
+                        <img src="INSERT_DES_1.jpg" alt="Chocolate Ice Cream" class="product-image">
+                        <div class="product-info"><h2>Chocolate Ice Cream Cup</h2><p class="price">Rs. 150.00</p><button class="add-btn" onclick="addToCart('Chocolate Ice Cream', 150)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_2.jpg" alt="Vanilla Ice Cream" class="product-image">
+                        <div class="product-info"><h2>Vanilla Ice Cream Cup</h2><p class="price">Rs. 150.00</p><button class="add-btn" onclick="addToCart('Vanilla Ice Cream', 150)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_3.jpg" alt="Watalappam" class="product-image">
+                        <div class="product-info"><h2>Watalappam Cup</h2><p class="price">Rs. 250.00</p><button class="add-btn" onclick="addToCart('Watalappam', 250)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_4.jpg" alt="Caramel Pudding" class="product-image">
+                        <div class="product-info"><h2>Cream Caramel Pudding</h2><p class="price">Rs. 200.00</p><button class="add-btn" onclick="addToCart('Cream Caramel Pudding', 200)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_5.jpg" alt="Chocolate Cake" class="product-image">
+                        <div class="product-info"><h2>Chocolate Cake (Slice)</h2><p class="price">Rs. 300.00</p><button class="add-btn" onclick="addToCart('Chocolate Cake (Slice)', 300)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_6.jpg" alt="Butter Cake" class="product-image">
+                        <div class="product-info"><h2>Butter Cake (Slice)</h2><p class="price">Rs. 200.00</p><button class="add-btn" onclick="addToCart('Butter Cake (Slice)', 200)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_7.jpg" alt="Fruit Salad" class="product-image">
+                        <div class="product-info"><h2>Fresh Fruit Salad</h2><p class="price">Rs. 250.00</p><button class="add-btn" onclick="addToCart('Fresh Fruit Salad', 250)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_8.jpg" alt="Fruit Salad Ice Cream" class="product-image">
+                        <div class="product-info"><h2>Fruit Salad with Ice Cream</h2><p class="price">Rs. 400.00</p><button class="add-btn" onclick="addToCart('Fruit Salad with Ice Cream', 400)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_9.jpg" alt="Brownie" class="product-image">
+                        <div class="product-info"><h2>Fudge Brownie</h2><p class="price">Rs. 350.00</p><button class="add-btn" onclick="addToCart('Fudge Brownie', 350)">Add to Cart</button></div>
+                    </article>
+                    <article class="product-card">
+                        <img src="INSERT_DES_10.jpg" alt="Donut" class="product-image">
+                        <div class="product-info"><h2>Chocolate Donut</h2><p class="price">Rs. 250.00</p><button class="add-btn" onclick="addToCart('Chocolate Donut', 250)">Add to Cart</button></div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+
+        <aside id="checkout-sidebar" class="sidebar hidden">
+            <div class="sidebar-header">
+                <h2>Your Cart</h2>
+                <button class="close-btn" onclick="toggleCart()">X</button>
+            </div>
+            
+            <div id="cart-items" class="cart-items-container"></div>
+            
+            <div class="cart-summary">
+                <h3>Total: Rs. <span id="cart-total">0.00</span></h3>
+            </div>
+
+            <form action="checkout.php" method="POST" id="checkout-form" class="checkout-form" onsubmit="prepareCheckout()">
+                <input type="hidden" name="order_details" id="order_details">
+                <input type="hidden" name="order_total" id="order_total_input">
+                
+                <div class="form-group">
+                    <label for="customer_name">Full Name</label>
+                    <input type="text" id="customer_name" name="customer_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student_id">Student / Staff ID</label>
+                    <input type="text" id="student_id" name="student_id" required>
+                </div>
+
+                <button type="submit" class="checkout-btn">Complete Checkout</button>
+            </form>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>NSBM Food Nest</h3>
+                <p>Quality meals for the NSBM community.</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="https://search.brave.com/search?q=nsbm+location+google+maps&summary=1&conversation=093b68ea1f17d85eae315f6a7e05071d0390&view=full&map_src=i&loc_id=loc4GAB567QKJENUBF3ZMEQ2SASUIA5UEC6SAAAAAAA%3D&bbox=79.575%2C6.616%2C80.508%2C7.027">Campus Map</a>
+                <a href="terms.html">Terms</a>
+            </nav>
+        </div>
+        <p class="copyright">© 2026 NSBM Food Nest. All rights reserved.</p>
+    </footer>
+
+    <script src="external.js"></script>
+</body>
+</html>
