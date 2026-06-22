@@ -390,6 +390,20 @@ header {
     border-bottom: 1px solid #2d2d2d;
 }
 
+.remove-btn {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.remove-btn:hover {
+    background-color: #cc0000;
+}
+
 .cart-summary {
     padding: 1rem 0;
     border-top: 2px solid #2d2d2d;
@@ -534,18 +548,108 @@ footer {
     margin-bottom: 1rem;
 }
 
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    border-left: 5px solid #008c4a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.3s forwards;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.fade-out {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .header-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .dropdown {
+        position: static;
+    }
+    
+    .dropdown-content {
+        min-width: 100%;
+        text-align: center;
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
+        padding: 2rem 0;
     }
-    
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
     .hero-image {
         justify-content: center;
     }
 
-    .header-nav {
-        display: none;
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+
+    .product-image {
+        height: 140px;
+    }
+
+    .product-info {
+        padding: 1rem;
+    }
+
+    .product-info h2 {
+        font-size: 1rem;
+    }
+
+    .price {
+        font-size: 1rem;
     }
 
     .footer-content {
