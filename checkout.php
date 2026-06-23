@@ -24,7 +24,7 @@ if ($conn->connect_error) {
 <body>
     <header>
         <div class="brand-container">
-            <img src="logo.png" alt="NSBM Logo" class="logo-img">
+            <img src="images/logo.png" alt="NSBM Logo" class="logo-img">
             <h1>NSBM Food Nest</h1>
         </div>
     </header>
