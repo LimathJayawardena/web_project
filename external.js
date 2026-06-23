@@ -56,11 +56,11 @@ function updateCartUI() {
         
         itemElement.innerHTML = `
             <div>
-                <h4>${item.name}</h4>
+                <h4 style="font-size: 0.9rem;">${item.name}</h4>
                 <small>Rs. ${item.price.toFixed(2)} x ${item.quantity}</small>
             </div>
             <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
-                <strong>Rs. ${itemTotal.toFixed(2)}</strong>
+                <strong style="font-size: 0.9rem;">Rs. ${itemTotal.toFixed(2)}</strong>
                 <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
             </div>
         `;
@@ -74,6 +74,7 @@ function updateCartUI() {
 function prepareCheckout(event) {
     const orderDetailsInput = document.getElementById('order_details');
     const orderTotalInput = document.getElementById('order_total_input');
+    const emailInput = document.getElementById('email');
     
     if (cart.length === 0) {
         if(event) event.preventDefault();
@@ -81,10 +82,26 @@ function prepareCheckout(event) {
         return false;
     }
 
-    if (orderDetailsInput && orderTotalInput) {
-        const detailsString = cart.map(item => `${item.name} (x${item.quantity})`).join(', ');
+    if (emailInput && emailInput.value) {
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         
-        orderDetailsInput.value = detailsString;
+        if (!emailPattern.test(emailInput.value)) {
+            if(event) event.preventDefault();
+            showToast("Please enter a valid email address!");
+            emailInput.focus(); 
+            return false;
+        }
+        
+        if (!emailInput.value.endsWith("@students.nsbm.ac.lk")) {
+            if(event) event.preventDefault();
+            showToast("You must use an @students.nsbm.ac.lk email!");
+            emailInput.focus();
+            return false;
+        }
+    }
+
+    if (orderDetailsInput && orderTotalInput) {
+        orderDetailsInput.value = JSON.stringify(cart);
         orderTotalInput.value = total;
     }
 }
